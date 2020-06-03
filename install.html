@@ -82,7 +82,15 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#multicategory-with-haskell-backend">MultiCategory with Haskell backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-first-haskell-part-of-the-backend">Install first Haskell part of the backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-the-java-spring-server">Start the Java Spring server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#multicategory-with-python-backend">MultiCategory with Python backend</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
@@ -154,6 +162,30 @@
             
   <div class="section" id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="multicategory-with-haskell-backend">
+<h2>MultiCategory with Haskell backend<a class="headerlink" href="#multicategory-with-haskell-backend" title="Permalink to this headline">¶</a></h2>
+<p>You can download the whole demo with all the necessary demo data included from its release page <a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/releases">MultiCategory</a>. The version contains all necessary libraries and example data to run MultiCategory. Before running the demo, you need to have Stack tool installed: <a class="reference external" href="https://docs.haskellstack.org/en/stable/README/">Stack Tool for Haskell</a> and Java version 11 or higher. Stack needs to be in PATH. At the moment MultiCategory runs on Windows and Mac.</p>
+<div class="section" id="install-first-haskell-part-of-the-backend">
+<h3>Install first Haskell part of the backend<a class="headerlink" href="#install-first-haskell-part-of-the-backend" title="Permalink to this headline">¶</a></h3>
+<p>Install first the Haskell part of the program. Unzip file that you loaded from the release page of this Github repository and navigate to the folder called MultiCategory. This folder contains a source code for the Haskell part of the program. Start the Haskell program by calling stack:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="n">ghci</span>
+</pre></div>
+</div>
+<p>First all the necessary packages are downloaded and after that the program is compiled. The first run takes some time especially if the stack tool has not been used before. If the execution fails, run the command again. When the execution is successfully finished, you should have REPL open in the console. You can now close the console.</p>
+</div>
+<div class="section" id="start-the-java-spring-server">
+<h3>Start the Java Spring server<a class="headerlink" href="#start-the-java-spring-server" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to the folder which contains MultiCategory-backend-0.0.1-SNAPSHOT.jar file and execute the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java -jar MultiCategory-backend-0.0.1-SNAPSHOT.jar
+</pre></div>
+</div>
+<p>This starts the server. You can open the page <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a>. Now you see the graphical interface of MultiCategory and you can study the demo.</p>
+</div>
+</div>
+<div class="section" id="multicategory-with-python-backend">
+<h2>MultiCategory with Python backend<a class="headerlink" href="#multicategory-with-python-backend" title="Permalink to this headline">¶</a></h2>
+<p>The guide will be updated.</p>
+</div>
 </div>
 
 

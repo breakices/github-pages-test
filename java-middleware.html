@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Reference &mdash; MultiCategory 0.0.1 documentation</title>
+  <title>Java Middleware &mdash; MultiCategory 0.0.1 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Javascript frontend" href="javascript-frontend.html" />
-    <link rel="prev" title="Tutorial" href="tutorial.html" /> 
+    <link rel="next" title="Haskell backend" href="haskell-backend.html" />
+    <link rel="prev" title="Javascript frontend" href="javascript-frontend.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,9 +84,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="javascript-frontend.html">Javascript frontend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java-middleware.html">Java Middleware</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Java Middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="haskell-backend.html">Haskell backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-backend.html">Python backend</a></li>
 </ul>
@@ -139,13 +139,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Reference</li>
+          <li><a href="reference.html">Reference</a> &raquo;</li>
+        
+      <li>Java Middleware</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/reference.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/java-middleware.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -158,17 +160,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="reference">
-<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="javascript-frontend.html">Javascript frontend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java-middleware.html">Java Middleware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="haskell-backend.html">Haskell backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-backend.html">Python backend</a></li>
+  <div class="section" id="java-middleware">
+<h1>Java Middleware<a class="headerlink" href="#java-middleware" title="Permalink to this headline">¶</a></h1>
+<p>We have developed a Java program between the JavaScript frontend and Haskell backend. Since there is no known method to integrate JavaScript and Haskell the way that the system requires, we developed this program. It uses Java Spring framework.
+It is responsible of various tasks:</p>
+<ul class="simple">
+<li><p>the program starts the frontend and the backend,</p></li>
+<li><p>it translates our multi-model query language into Haskell fold-functions,</p></li>
+<li><p>it sends translated queries to the Haskell backend and parses the results,</p></li>
+<li><p>it stores queries and results for possible later use.</p></li>
 </ul>
-</div>
 </div>
 
 
@@ -179,10 +180,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="javascript-frontend.html" class="btn btn-neutral float-right" title="Javascript frontend" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="haskell-backend.html" class="btn btn-neutral float-right" title="Haskell backend" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tutorial.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="javascript-frontend.html" class="btn btn-neutral float-left" title="Javascript frontend" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

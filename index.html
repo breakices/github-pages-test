@@ -153,20 +153,39 @@
             
   <div class="section" id="welcome-to-multicategory-s-documentation">
 <h1>Welcome to MultiCategory’s documentation!<a class="headerlink" href="#welcome-to-multicategory-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>MultiCategory is a prototype system that demonstrates how applied category theory could be used to model multi-model databases and multi-model query processing.</p>
+<p>Multi-model databases are built so that their single backend supports multiple data models.</p>
+<p>MultiCategory can be devided into two different versions depending the programming language used in the backend. The first version is written with functional programming language <a class="reference external" href="https://www.haskell.org/">Haskell</a>.
+The later version, which is currently under development, is written with Python.</p>
+<p>The Haskell version is mainly written so that it supports selective multi-model queries that are executed over multi-model data. The data models, that MultiCategory supports, are</p>
+<ul class="simple">
+<li><p>relational,</p></li>
+<li><p>hierarchical such as XML and JSON,</p></li>
+<li><p>key-value documents,</p></li>
+<li><p>property graphs and</p></li>
+<li><p>RDF graphs.</p></li>
+</ul>
+<p>The Python version of MultiCategory is developed so that it will support multi-model joins. Also, the theoretical background differs between the versions.
+In our work we consider multi-model databases using category theory and many concepts from database design are translated into category theory.
+This way we obtain unified and consistent theory between different data models.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference.html#frontend">Frontend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference.html#backend-haskell-core">Backend: Haskell core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference.html#backend-python-core">Backend: Python core</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="javascript-frontend.html">Javascript frontend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="haskell-backend.html">Haskell backend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-backend.html">Python backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#multicategory-with-haskell-backend">MultiCategory with Haskell backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#install-first-haskell-part-of-the-backend">Install first Haskell part of the backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#start-the-java-spring-server">Start the Java Spring server</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#multicategory-with-python-backend">MultiCategory with Python backend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-frontend.html">Javascript frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java-middleware.html">Java Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="haskell-backend.html">Haskell backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-backend.html">Python backend</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>

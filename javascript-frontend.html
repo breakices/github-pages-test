@@ -85,14 +85,9 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="reference.html">Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="reference.html#frontend">Frontend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference.html#backend-haskell-core">Backend: Haskell core</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="reference.html#backend-python-core">Backend: Python core</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Javascript frontend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="haskell-backend.html">Haskell backend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-backend.html">Python backend</a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Javascript frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="haskell-backend.html">Haskell backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-backend.html">Python backend</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
@@ -166,6 +161,10 @@
             
   <div class="section" id="javascript-frontend">
 <h1>Javascript frontend<a class="headerlink" href="#javascript-frontend" title="Permalink to this headline">¶</a></h1>
+<p>The frontend of MultiCategory is same for both Haskell and Python versions and it is responsible of providing interface to input multi-model queries, upload data (will be included to the Python version) and visualizing data,
+category theoretical constructions (instance and schema categories) and multi-model query processing.</p>
+<p>The frontend is created with <a class="reference external" href="https://reactjs.org/">React</a> and data visualizations are implemented with <a class="reference external" href="https://d3js.org/">D3js</a>.</p>
+<p>The frontend is able to visualize different kind of tables, graphs and hierarchical structures although there are certain limitations regarding the size of the data that it is able to visualize.</p>
 </div>
 
 
