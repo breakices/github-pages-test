@@ -7,6 +7,7 @@ MultiCategory with Haskell backend
 
 You can download the whole demo with all the necessary demo data included from its release page `MultiCategory <https://github.com/valterUo/MultiCategory-demo-system/releases>`_. The version contains all necessary libraries and example data to run MultiCategory. Before running the demo, you need to have Stack tool installed: `Stack Tool for Haskell <https://docs.haskellstack.org/en/stable/README/>`_ and Java version 11 or higher. Stack needs to be in PATH. At the moment MultiCategory runs on Windows and Mac.
 
+
 Install first Haskell part of the backend
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
