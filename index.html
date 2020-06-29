@@ -83,6 +83,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sets.html">Data sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">Lisence</a></li>
@@ -153,10 +154,12 @@
             
   <div class="section" id="welcome-to-multicategory-s-documentation">
 <h1>Welcome to MultiCategory’s documentation!<a class="headerlink" href="#welcome-to-multicategory-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>MultiCategory is a prototype system that demonstrates how applied category theory could be used to model multi-model databases and multi-model query processing.</p>
-<p>Multi-model databases are built so that their single backend supports multiple data models.</p>
+<p>MultiCategory is a prototype system that demonstrates how applied category theory could be used to model multi-model databases and multi-model query processing. Note that the system is mainly meant for demonstration purposes.</p>
+<p>Multi-model databases are databases whose single backend supports multiple data models.</p>
 <p>MultiCategory can be devided into two different versions depending the programming language used in the backend. The first version is written with functional programming language <a class="reference external" href="https://www.haskell.org/">Haskell</a>.
 The later version, which is currently under development, is written with Python.</p>
+<div class="section" id="haskell-version">
+<h2>Haskell version<a class="headerlink" href="#haskell-version" title="Permalink to this headline">¶</a></h2>
 <p>The Haskell version is mainly written so that it supports selective multi-model queries that are executed over multi-model data. The data models, that MultiCategory supports, are</p>
 <ul class="simple">
 <li><p>relational,</p></li>
@@ -165,9 +168,33 @@ The later version, which is currently under development, is written with Python.
 <li><p>property graphs and</p></li>
 <li><p>RDF graphs.</p></li>
 </ul>
-<p>The Python version of MultiCategory is developed so that it will support multi-model joins. Also, the theoretical background differs between the versions.
-In our work we consider multi-model databases using category theory and many concepts from database design are translated into category theory.
-This way we obtain unified and consistent theory between different data models.</p>
+<p>The Haskell version of MultiCategory provides:</p>
+<ul class="simple">
+<li><p>category theoretical construction to model data storing and query processing in conceptual level</p></li>
+<li><p>selective multi-model queries based on fold-functions</p></li>
+</ul>
+</div>
+<div class="section" id="python-version-under-development-and-not-released-or-published-or-submitted">
+<h2>Python version (under development and not released or published or submitted)<a class="headerlink" href="#python-version-under-development-and-not-released-or-published-or-submitted" title="Permalink to this headline">¶</a></h2>
+<p>The Python version of MultiCategory is developed so that it will support multi-model joins. Also, the theoretical background differs between the versions.</p>
+<p>The Python version of MultiCategory will provide:</p>
+<ul class="simple">
+<li><p>updates to data defined with category theory</p></li>
+<li><p>multi-model joins defined with category theory</p></li>
+<li><p>machine learning driven optimization for query processing</p></li>
+<li><p>certain updates compered to Haskell version</p></li>
+</ul>
+</div>
+<div class="section" id="audience">
+<h2>Audience<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a></h2>
+<p>The audience for MultiCategory includes database scientists, functional programming community, category theorists and anyone who is interested in constructing fundamentally different database systems.
+Please see the bibliography for interesting resources related to multi-model databases, category theory and related systems.</p>
+</div>
+<div class="section" id="free-software">
+<h2>Free software<a class="headerlink" href="#free-software" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -181,17 +208,32 @@ This way we obtain unified and consistent theory between different data models.<
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sets.html">Data sets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_sets.html#simple-e-commerce-data-sets">Simple E-commerce data sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sets.html#data-sets-from-helsinki-multi-model-data-repository">Data sets from Helsinki multi-model data repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sets.html#unibench">Unibench</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javascript-frontend.html">Javascript frontend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java-middleware.html">Java Middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="haskell-backend.html">Haskell backend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python-backend.html">Python backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-backend.html">Python backend (under development and not released or published or submitted)</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">Lisence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html#category-theory">Category theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html#multi-model-databases">Multi-model databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html#techical-solutions">Techical solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html#other">Other</a></li>
 </ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
