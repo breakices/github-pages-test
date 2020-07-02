@@ -83,11 +83,18 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#view-schema-and-instance-categories">View schema and instance categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#executing-queries">Executing queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#categorical-view-of-query-and-fold-function">Categorical view of query and fold-function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#query-processing-example">Query processing example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="data_sets.html">Data sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">Lisence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -155,6 +162,48 @@
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>MultiCategory is relatively simple to use thanks to the web interface. On the right side of the main view of the web interface, you can find the implemented data sets.</p>
+<div class="section" id="view-schema-and-instance-categories">
+<h2>View schema and instance categories<a class="headerlink" href="#view-schema-and-instance-categories" title="Permalink to this headline">¶</a></h2>
+<p>For the selected data set you can click the buttons ‘’Schema category’’ and ‘’Instance category’’ to open the wanted category. The categories are drawn as D3js graphs.</p>
+</div>
+<div class="section" id="executing-queries">
+<h2>Executing queries<a class="headerlink" href="#executing-queries" title="Permalink to this headline">¶</a></h2>
+<p>Click the ‘’Examples’’ button that opens a collection of dropdown menus. Behind the dropdown menus, you will find various multi-model query examples. Choose an example that opens it in the input editor. You can modify the query if you wish and then execute
+it by clicking the play button. Depending on the query the result should appear below the input field. The ‘’Result’’ button toggles the result.</p>
+<p>In some property graphs nodes contain lots of information. If you want to view this information, you can click ‘’Contents of a node’’ that opens a field. If you now move the mouse over the nodes
+you can study data inside the nodes. This applies to all the graphs.</p>
+</div>
+<div class="section" id="categorical-view-of-query-and-fold-function">
+<h2>Categorical view of query and fold-function<a class="headerlink" href="#categorical-view-of-query-and-fold-function" title="Permalink to this headline">¶</a></h2>
+<p>After executing a query, you can click ‘’Categorical view of query’’ that examines the query and draws it as a graph. This graph is a visualization of the sequence of the fold-functions. You can click the nodes that are related to the main fold-function (the largest nodes in the graph). After clicking these nodes, a new graph is drawn. This graph is a visualization of the inner structure of the clicked fold-function. If you want to view the corresponding fold-function, you
+can click the ‘’Fold-function’’ button. You can also copy this function and execute it in the Haskell program that runs, for instance, in REPL.</p>
+</div>
+<div class="section" id="query-processing-example">
+<h2>Query processing example<a class="headerlink" href="#query-processing-example" title="Permalink to this headline">¶</a></h2>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LET</span> <span class="n">t</span> <span class="n">BE</span>
+<span class="n">QUERY</span> <span class="p">(</span>\<span class="n">x</span> <span class="o">-&gt;</span> <span class="k">if</span> <span class="n">customerName</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;Alice&quot;</span> <span class="n">then</span> <span class="n">cons</span> <span class="n">x</span> <span class="k">else</span> <span class="n">nil</span><span class="p">)</span>
+<span class="n">FROM</span> <span class="n">customers</span>
+<span class="n">TO</span> <span class="n">relational</span>
+<span class="n">IN</span>
+<span class="n">QUERY</span> <span class="p">(</span>\<span class="n">x</span> <span class="o">-&gt;</span> <span class="k">if</span> <span class="nb">any</span> <span class="p">(</span>\<span class="n">y</span> <span class="o">-&gt;</span> <span class="n">knows</span> <span class="n">x</span> <span class="n">y</span> <span class="n">customers</span><span class="p">)</span> <span class="n">t</span> <span class="n">then</span> <span class="n">cons</span> <span class="n">x</span> <span class="k">else</span> <span class="n">nil</span><span class="p">)</span>
+<span class="n">FROM</span> <span class="n">customers</span>
+<span class="n">TO</span> <span class="n">algebraic</span> <span class="n">graph</span>
+</pre></div>
+</div>
+<p>becomes a sequence of folds:</p>
+<div class="highlight-Haskell notranslate"><div class="highlight"><pre><span></span><span class="kr">let</span> <span class="n">t</span> <span class="ow">=</span>
+<span class="nf">foldg</span>  <span class="kt">[]</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">customerName</span> <span class="n">x</span> <span class="o">==</span> <span class="s">&quot;Alice&quot;</span> <span class="kr">then</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>  <span class="kr">else</span> <span class="kt">[]</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">union</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">union</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span>  <span class="n">customers</span>
+<span class="kr">in</span>
+<span class="nf">foldg</span>  <span class="kt">Algebra</span><span class="o">.</span><span class="kt">Graph</span><span class="o">.</span><span class="n">empty</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">any</span> <span class="p">(</span> <span class="nf">\</span><span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">knows</span> <span class="n">x</span> <span class="n">y</span> <span class="n">customers</span> <span class="p">)</span> <span class="n">t</span> <span class="kr">then</span> <span class="kt">Vertex</span> <span class="n">x</span> <span class="kr">else</span> <span class="kt">Algebra</span><span class="o">.</span><span class="kt">Graph</span><span class="o">.</span><span class="n">empty</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">overlay</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">connect</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span>  <span class="n">customers</span>
+</pre></div>
+</div>
+<p>The user does not need to know the <code class="docutils literal notranslate"><span class="pre">cons</span></code> and <code class="docutils literal notranslate"><span class="pre">nil</span></code> functions for the collections. The system can determine them based on the data sets and it knows how to use them in different combinations.
+The user is also allowed to input multiple lambda functions. If the user does not provide a lambda function, then a certain initial setting is used.</p>
+<p>Unfortunately, the system cannot know how the user wants to build richer structures from primitive structures. For example, if the user is querying a table to the graph, they need to define explicitly how data is organized in the output graph. On the other hand, if the user is querying graph to the table, then it suffices to use <code class="docutils literal notranslate"><span class="pre">cons</span></code> and <code class="docutils literal notranslate"><span class="pre">nil</span></code> functions and multiple lambda functions.</p>
+<p>The program contains more examples that can be executed.</p>
+</div>
 </div>
 
 

@@ -89,9 +89,8 @@
 <li class="toctree-l2"><a class="reference internal" href="javascript-frontend.html">Javascript frontend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java-middleware.html">Java Middleware</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Haskell backend</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#packages-and-data-stuctures">Packages and data stuctures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#schema-and-instance-categories">Schema and instance categories</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#query-processing-example">Query processing example</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="#packages-and-data-structures">Packages and data structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schema-and-instance-categories">Schema and instance categories</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -101,6 +100,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">Lisence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -171,8 +171,8 @@
   <div class="section" id="haskell-backend">
 <h1>Haskell backend<a class="headerlink" href="#haskell-backend" title="Permalink to this headline">¶</a></h1>
 <p>The Haskell backend is an independent part of the system and the user can use it from the console. You can start the program by navigating its folder <code class="docutils literal notranslate"><span class="pre">MultiCategory</span></code> and running the command <code class="docutils literal notranslate"><span class="pre">stack</span> <span class="pre">ghci</span></code> which starts the  (read evaluate print loop).</p>
-<div class="section" id="packages-and-data-stuctures">
-<h2>Packages and data stuctures<a class="headerlink" href="#packages-and-data-stuctures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="packages-and-data-structures">
+<h2>Packages and data structures<a class="headerlink" href="#packages-and-data-structures" title="Permalink to this headline">¶</a></h2>
 <p>The backend uses the following packages to store different models. Some of the data structures are fairly simple and included in the base.</p>
 <blockquote>
 <div><ul class="simple">
@@ -190,35 +190,9 @@
 <div class="section" id="schema-and-instance-categories">
 <h2>Schema and instance categories<a class="headerlink" href="#schema-and-instance-categories" title="Permalink to this headline">¶</a></h2>
 <p>The schema categories are implemented as modules that contain Haskell datatypes. These schema categories can be found from the folder
-<a href="#id1"><span class="problematic" id="id2">`src&lt;https://github.com/valterUo/MultiCategory-demo-system/tree/master/MultiCategory/src&gt;`_</span></a> which contains folders named after the data sets.
-Each folder contains a file called <cite>SchemaCategory.hs</cite>. Each of these folders contain a file called <cite>InstanceCategory.hs</cite> which contains the objects that are mapped with collection constructor functors from the schema category.
+<a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/tree/master/MultiCategory/src">src</a> which contains folders named after the data sets.
+Each folder contains a file called <cite>SchemaCategory.hs</cite>. Each of these folders contains a file called <cite>InstanceCategory.hs</cite> which contains the objects that are mapped with collection constructor functors from the schema category.
 The morphisms are not implemented explicitly since we conceptually consider that all the Haskell functions (except the undefined) to be morphisms.</p>
-</div>
-<div class="section" id="query-processing-example">
-<h2>Query processing example<a class="headerlink" href="#query-processing-example" title="Permalink to this headline">¶</a></h2>
-<p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LET</span> <span class="n">t</span> <span class="n">BE</span>
-<span class="n">QUERY</span> <span class="p">(</span>\<span class="n">x</span> <span class="o">-&gt;</span> <span class="k">if</span> <span class="n">customerName</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;Alice&quot;</span> <span class="n">then</span> <span class="n">cons</span> <span class="n">x</span> <span class="k">else</span> <span class="n">nil</span><span class="p">)</span>
-<span class="n">FROM</span> <span class="n">customers</span>
-<span class="n">TO</span> <span class="n">relational</span>
-<span class="n">IN</span>
-<span class="n">QUERY</span> <span class="p">(</span>\<span class="n">x</span> <span class="o">-&gt;</span> <span class="k">if</span> <span class="nb">any</span> <span class="p">(</span>\<span class="n">y</span> <span class="o">-&gt;</span> <span class="n">knows</span> <span class="n">x</span> <span class="n">y</span> <span class="n">customers</span><span class="p">)</span> <span class="n">t</span> <span class="n">then</span> <span class="n">cons</span> <span class="n">x</span> <span class="k">else</span> <span class="n">nil</span><span class="p">)</span>
-<span class="n">FROM</span> <span class="n">customers</span>
-<span class="n">TO</span> <span class="n">algebraic</span> <span class="n">graph</span>
-</pre></div>
-</div>
-<p>becomes a sequence of folds:</p>
-<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kr">let</span> <span class="n">t</span> <span class="ow">=</span>
-<span class="nf">foldg</span>  <span class="kt">[]</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">customerName</span> <span class="n">x</span> <span class="o">==</span> <span class="s">&quot;Alice&quot;</span> <span class="kr">then</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>  <span class="kr">else</span> <span class="kt">[]</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">union</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">union</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span>  <span class="n">customers</span>
-<span class="kr">in</span>
-<span class="nf">foldg</span>  <span class="kt">Algebra</span><span class="o">.</span><span class="kt">Graph</span><span class="o">.</span><span class="n">empty</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">any</span> <span class="p">(</span> <span class="nf">\</span><span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">knows</span> <span class="n">x</span> <span class="n">y</span> <span class="n">customers</span> <span class="p">)</span> <span class="n">t</span> <span class="kr">then</span> <span class="kt">Vertex</span> <span class="n">x</span> <span class="kr">else</span> <span class="kt">Algebra</span><span class="o">.</span><span class="kt">Graph</span><span class="o">.</span><span class="n">empty</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">overlay</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span> <span class="ow">-&gt;</span> <span class="n">connect</span> <span class="n">x</span> <span class="n">y</span> <span class="p">)</span>  <span class="n">customers</span>
-</pre></div>
-</div>
-<p>The user does not need to know the <code class="docutils literal notranslate"><span class="pre">cons</span></code> and <code class="docutils literal notranslate"><span class="pre">nil</span></code> functions for the colletions. The system can determine them based on the data sets and it knows how to use them in different combinations.
-The user is also allowed to input multiple lambda functions. If the user does not provide a lambda function, then the certain initial setting is used.</p>
-<p>Unfortunately, the system cannot know how user wants to build richer structures from primitive structures. For example, if the user is querying a table to graph, they need to define explicitly
-how data is organized in the output graph. On the otherhand, if the user is querying graph to table, then it suffices to use <code class="docutils literal notranslate"><span class="pre">cons</span></code> and <code class="docutils literal notranslate"><span class="pre">nil</span></code> functions and multiple lambda functions.</p>
-<p>The program contains more examples that can be executed.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

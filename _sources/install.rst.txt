@@ -11,13 +11,13 @@ You can download the whole demo with all the necessary demo data included from i
 Install first Haskell part of the backend
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Install first the Haskell part of the program. Unzip file that you loaded from the release page of this Github repository and navigate to the folder called MultiCategory. This folder contains a source code for the Haskell part of the program. Start the Haskell program by calling stack:
+Install first the Haskell part of the program. Unzip the file that you loaded from the release page of this Github repository and navigate to the folder called MultiCategory. This folder contains source code for the Haskell part of the program. Start the Haskell program by calling stack:
 
 .. code-block::
 
     stack ghci
 
-First all the necessary packages are downloaded and after that the program is compiled. The first run takes some time especially if the stack tool has not been used before. If the execution fails, run the command again. When the execution is successfully finished, you should have REPL open in the console. You can now close the console.
+First, all the necessary packages are downloaded and after that, the program is compiled. The first run takes some time especially if the stack tool has not been used before. If the execution fails, run the command again. When the execution is successfully finished, you should have REPL open in the console. You can now close the console.
 
 Start the Java Spring server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

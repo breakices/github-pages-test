@@ -97,6 +97,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">Lisence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -167,23 +168,23 @@
   <div class="section" id="java-middleware">
 <h1>Java Middleware<a class="headerlink" href="#java-middleware" title="Permalink to this headline">¶</a></h1>
 <p>We have developed a Java program between the JavaScript frontend and Haskell backend. Since there is no known method to integrate JavaScript and Haskell the way that the system requires, we developed this program. It uses Java Spring framework.
-It is responsible of various tasks:</p>
+It is responsible for various tasks:</p>
 <ul class="simple">
 <li><p>the program starts the frontend and the backend,</p></li>
 <li><p>it translates our multi-model query language into Haskell fold-functions,</p></li>
 <li><p>it sends translated queries to the Haskell backend and parses the results,</p></li>
 <li><p>it stores queries and results for possible later use.</p></li>
 </ul>
-<p>The program contains a small <a class="reference external" href="http://jsondb.io/">JSONDB</a> database that stores queries, parsed queries and certain results. The Java program connects to Haskell backend using <a class="reference external" href="https://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.html">ProcessBuilder</a>.</p>
+<p>The program contains a small <a class="reference external" href="http://jsondb.io/">JSONDB</a> database that stores queries, parsed queries, and certain results. The Java program connects to Haskell backend using <a class="reference external" href="https://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.html">ProcessBuilder</a>.</p>
 <div class="section" id="query-tokenizing-parsing-and-translating">
 <h2>Query tokenizing, parsing and translating<a class="headerlink" href="#query-tokenizing-parsing-and-translating" title="Permalink to this headline">¶</a></h2>
-<p>Each selective query becomes and instance of a class called <a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/blob/master/src/query/SelectiveQuery.java">SelectiveQuery</a>.
-When SelectiveQuery object is created, the input query string is automatically tokenized, parsed and translated so that user can output the corresponding Haskell code i.e. the sequence of fold functions.
+<p>Each selective query becomes an instance of a class called <a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/blob/master/src/query/SelectiveQuery.java">SelectiveQuery</a>.
+When SelectiveQuery object is created, the input query string is automatically tokenized, parsed, and translated so that the user can output the corresponding Haskell code i.e. the sequence of fold functions.
 Each SelectiveQuery consists of one or multiple <a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/blob/master/src/query/QueryBlock.java">QueryBlocks</a> which have one or multiple
 <a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/blob/master/src/query/LambdaFunction.java">LambdaFunctions</a>.</p>
 <p>This structure of classes creates a simple parse tree of the query and it can be efficiently used to modify and understand the query. Certain keywords (<code class="docutils literal notranslate"><span class="pre">cons</span></code>, <code class="docutils literal notranslate"><span class="pre">nil</span></code> which are related to <a class="bibtex reference internal" href="bibliography.html#grust2004" id="id1">[Gru04]</a> and <a class="bibtex reference internal" href="bibliography.html#grust1999compr-709" id="id2">[Gru99]</a>) are
 modified with respect to the target model of the query and the correct fold function is used with respect to the target model of the query.
-The <a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/blob/master/src/codeGenerator/CodeGenerator.java">CodeGenerator</a> class is partly responsible of this.</p>
+The <a class="reference external" href="https://github.com/valterUo/MultiCategory-demo-system/blob/master/src/codeGenerator/CodeGenerator.java">CodeGenerator</a> class is partly responsible for this.</p>
 </div>
 </div>
 

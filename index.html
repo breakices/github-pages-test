@@ -87,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">Lisence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -155,8 +156,8 @@
   <div class="section" id="welcome-to-multicategory-s-documentation">
 <h1>Welcome to MultiCategory’s documentation!<a class="headerlink" href="#welcome-to-multicategory-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>MultiCategory is a prototype system that demonstrates how applied category theory could be used to model multi-model databases and multi-model query processing. Note that the system is mainly meant for demonstration purposes.</p>
-<p>Multi-model databases are databases whose single backend supports multiple data models.</p>
-<p>MultiCategory can be devided into two different versions depending the programming language used in the backend. The first version is written with functional programming language <a class="reference external" href="https://www.haskell.org/">Haskell</a>.
+<p>Multi-model databases are databases whose single backend supports multiple data models. Category theory is a sort of mathematics</p>
+<p>MultiCategory can be divided into two different versions depending on the programming language used in the backend. The first version is written with functional programming language <a class="reference external" href="https://www.haskell.org/">Haskell</a>.
 The later version, which is currently under development, is written with Python.</p>
 <div class="section" id="haskell-version">
 <h2>Haskell version<a class="headerlink" href="#haskell-version" title="Permalink to this headline">¶</a></h2>
@@ -170,7 +171,7 @@ The later version, which is currently under development, is written with Python.
 </ul>
 <p>The Haskell version of MultiCategory provides:</p>
 <ul class="simple">
-<li><p>category theoretical construction to model data storing and query processing in conceptual level</p></li>
+<li><p>category theoretical construction to model data storing and query processing in the conceptual level</p></li>
 <li><p>selective multi-model queries based on fold-functions</p></li>
 </ul>
 </div>
@@ -181,20 +182,20 @@ The later version, which is currently under development, is written with Python.
 <ul class="simple">
 <li><p>updates to data defined with category theory</p></li>
 <li><p>multi-model joins defined with category theory</p></li>
-<li><p>machine learning driven optimization for query processing</p></li>
-<li><p>certain updates compered to Haskell version</p></li>
+<li><p>machine learning-driven optimization for query processing</p></li>
+<li><p>certain updates compared to Haskell version</p></li>
 </ul>
 </div>
 <div class="section" id="audience">
 <h2>Audience<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a></h2>
-<p>The audience for MultiCategory includes database scientists, functional programming community, category theorists and anyone who is interested in constructing fundamentally different database systems.
-Please see the bibliography for interesting resources related to multi-model databases, category theory and related systems.</p>
-</div>
-<div class="section" id="free-software">
-<h2>Free software<a class="headerlink" href="#free-software" title="Permalink to this headline">¶</a></h2>
+<p>The audience for MultiCategory includes database scientists, the functional programming community, category theorists, and anyone interested in constructing fundamentally different database systems.
+Please see the bibliography for interesting resources related to multi-model databases, category theory, and related systems.</p>
 </div>
 <div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>MultiCategory is strongly inspired by Spivak’s work <a class="bibtex reference internal" href="bibliography.html#dblp-journals-corr-abs-1009-1166" id="id1">[Spi10]</a>, <a class="bibtex reference internal" href="bibliography.html#conf-lfcs-forssellgs16" id="id2">[FGS16]</a>,
+<a class="bibtex reference internal" href="bibliography.html#spivak2014category" id="id3">[Spi14]</a>, and <a class="bibtex reference internal" href="bibliography.html#id2" id="id4">[SSW17]</a>. One of the earliest motivations to use applied category theory to model database was presented in <a class="bibtex reference internal" href="bibliography.html#diskin1996fi" id="id5">[DK96]</a>.
+MultiCategory had originally <a class="reference external" href="https://smlfamily.github.io/">SML</a> backend which was difficult to use efficiently. We switched to Haskell but followed similar principles as we had with the SML version.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -207,7 +208,13 @@ Please see the bibliography for interesting resources related to multi-model dat
 <li class="toctree-l2"><a class="reference internal" href="install.html#multicategory-with-python-backend">MultiCategory with Python backend</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#view-schema-and-instance-categories">View schema and instance categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#executing-queries">Executing queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#categorical-view-of-query-and-fold-function">Categorical view of query and fold-function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#query-processing-example">Query processing example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="data_sets.html">Data sets</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="data_sets.html#simple-e-commerce-data-sets">Simple E-commerce data sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sets.html#data-sets-from-helsinki-multi-model-data-repository">Data sets from Helsinki multi-model data repository</a></li>
@@ -224,9 +231,8 @@ Please see the bibliography for interesting resources related to multi-model dat
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="haskell-backend.html">Haskell backend</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="haskell-backend.html#packages-and-data-stuctures">Packages and data stuctures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="haskell-backend.html#packages-and-data-structures">Packages and data structures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="haskell-backend.html#schema-and-instance-categories">Schema and instance categories</a></li>
-<li class="toctree-l3"><a class="reference internal" href="haskell-backend.html#query-processing-example">Query processing example</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python-backend.html">Python backend (under development and not released or published or submitted)</a><ul>
@@ -237,6 +243,7 @@ Please see the bibliography for interesting resources related to multi-model dat
 </li>
 <li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">Lisence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="bibliography.html#category-theory">Category theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bibliography.html#multi-model-databases">Multi-model databases</a></li>
