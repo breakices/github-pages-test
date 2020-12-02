@@ -37,9 +37,9 @@ MultiCategory with Python backend
 MultiCategory has expanded to include polystore like properties such as data and query transformations from a relational database to a graph database. That leads to more complicated installation and configuration process which I have tried to make as simple as possible.
 
 1. Make sure that you have at least 10Gb free disk space. Docker containers (and especially database containers) require space.
-1. Install `Docker <https://www.docker.com/>`_. You also need a tool to run shell scripts if you are using Windows.
-2. Go to `MultiCategory-backend-py <https://github.com/valterUo/MultiCategory-backend-py>`_ Github page and clone the repository. The installation scripts are located in the ``provisions`` directory.
-3. On command line go to the ``provisions`` directory and run the script in the file ``setup_multicategory_docker.sh``:
+2. Install `Docker <https://www.docker.com/>`_. You also need a tool to run shell scripts if you are using Windows.
+3. Go to `MultiCategory-backend-py <https://github.com/valterUo/MultiCategory-backend-py>`_ Github page and clone the repository. The installation scripts are located in the ``provisions`` directory.
+4. On command line go to the ``provisions`` directory and run the script in the file ``setup_multicategory_docker.sh``:
 
     .. code-block::
 
