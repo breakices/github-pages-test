@@ -187,12 +187,15 @@
 <div class="section" id="multicategory-with-python-backend">
 <h2>MultiCategory with Python backend<a class="headerlink" href="#multicategory-with-python-backend" title="Permalink to this headline">¶</a></h2>
 <p>MultiCategory has expanded to include polystore like properties such as data and query transformations from a relational database to a graph database. That leads to more complicated installation and configuration process which I have tried to make as simple as possible.</p>
-<p>Install <a class="reference external" href="https://www.docker.com/">Docker</a>.</p>
-<p>Please go to <a class="reference external" href="https://github.com/valterUo/MultiCategory-backend-py">MultiCategory-backend-py</a> Github page and clone the repository. The installation scripts are located in the <code class="docutils literal notranslate"><span class="pre">provisions</span></code> directory.</p>
-<p>On command line go to the <code class="docutils literal notranslate"><span class="pre">provisions</span></code> directory and run the script in the file <code class="docutils literal notranslate"><span class="pre">setup_multicategory_docker.sh</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="o">./</span><span class="n">setup_multicategory_docker</span><span class="o">.</span><span class="n">sh</span>
+<p>1. Make sure that you have at least 10Gb free disk space. Docker containers (and especially database containers) require space.
+1. Install <a class="reference external" href="https://www.docker.com/">Docker</a>. You also need a tool to run shell scripts if you are using Windows.
+2. Go to <a class="reference external" href="https://github.com/valterUo/MultiCategory-backend-py">MultiCategory-backend-py</a> Github page and clone the repository. The installation scripts are located in the <code class="docutils literal notranslate"><span class="pre">provisions</span></code> directory.
+3. On command line go to the <code class="docutils literal notranslate"><span class="pre">provisions</span></code> directory and run the script in the file <code class="docutils literal notranslate"><span class="pre">setup_multicategory_docker.sh</span></code>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="o">./</span><span class="n">setup_multicategory_docker</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
+</div></blockquote>
 <p>If the installation succeeds, you should be able to see the frontend in the address <a class="reference external" href="http://localhost:8090/">http://localhost:8090/</a>.</p>
 <p>The script should start the following procedure:</p>
 <blockquote>
